@@ -1,162 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apology Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apology Letter to Joseph</title>
+
+  <!-- Romantic Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
   <style>
-    /* Body and background */
     body {
-      background-color: #ffe6e6; /* soft pastel pink */
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+
+      /* Romantic Background */
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      height: 100vh;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
     }
 
-    /* Floating hearts (subtle decorative effect) */
-    .heart {
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      background-color: #ffb3b3;
-      transform: rotate(45deg);
-      animation: float 6s infinite;
-      opacity: 0.7;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      background-color: #ffb3b3;
-      border-radius: 50%;
-    }
-
-    .heart::before { top: -7.5px; left: 0; }
-    .heart::after { left: 7.5px; top: 0; }
-
-    @keyframes float {
-      0% { transform: translateY(0) rotate(45deg); opacity: 0.7; }
-      50% { transform: translateY(-50px) rotate(45deg); opacity: 0.9; }
-      100% { transform: translateY(-100px) rotate(45deg); opacity: 0.7; }
-    }
-
-    /* Card styling */
-    .card {
-      background-color: white;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    .letter-box {
+      background: rgba(255, 255, 255, 0.95);
+      width: 85%;
+      max-width: 700px;
+      padding: 55px;
+      border-radius: 25px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
       text-align: center;
-      max-width: 400px;
-      width: 90%;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
     }
 
-    /* Buttons */
-    .buttons {
-      margin-top: 20px;
+    h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: 65px;
+      color: #c2185b;
+      margin-bottom: 20px;
     }
 
-    button {
-      margin: 10px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 12px;
-      background-color: #ffb3b3;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    button:hover {
-      background-color: #ff9999;
-    }
-
-    button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-
-    /* Fade animations */
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeOut {
-      to { opacity: 0; }
-    }
-
-    /* Final goodbye styling */
-    .final-message {
+    p {
       font-size: 18px;
-      padding: 20px;
-      color: #555;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
+      line-height: 1.9;
+      color: #333;
+      margin-bottom: 20px;
     }
 
-    @media (max-width: 500px) {
-      .card { padding: 20px; }
-      button { font-size: 14px; padding: 10px 20px; }
+    .signature {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    /* Romantic Button */
+    .forgive-btn {
+      margin-top: 30px;
+      padding: 15px 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: #c2185b;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0px 5px 15px rgba(194, 24, 91, 0.4);
+    }
+
+    .forgive-btn:hover {
+      background: #e91e63;
+      transform: scale(1.05);
+    }
+
+    /* Hidden message after click */
+    #message {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #c2185b;
+      display: none;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Floating hearts -->
-  <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
-  <div class="heart" style="left: 30%; animation-delay: 1s;"></div>
-  <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
-  <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
-  <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
+  <div class="letter-box">
 
-  <!-- Main card -->
-  <div class="card" id="card">
-    <h1>For You, Joseph</h1>
-    <p id="message">This is the initial apology text. I want to acknowledge my mistakes and express appreciation for the moments we shared.</p>
-    <div class="buttons">
-      <button id="sorryBtn">I’m sorry</button>
-      <button id="letGoBtn">Letting go</button>
-    </div>
+    <h1>Dear Joseph,</h1>
+
+    <p>
+      I want to speak from the deepest part of my heart and sincerely apologize
+      for everything that has happened. I know I may have hurt you, and I truly
+      regret causing you any pain or disappointment.
+    </p>
+
+    <p>
+      Joseph, you mean so much to me, and it hurts knowing that my actions or
+      words may have made you feel upset. Please understand that it was never
+      my intention to lose the bond we share.
+    </p>
+
+    <p>
+      I am asking you with all honesty and humility to forgive me. I hope we can
+      heal from this moment, and move forward with peace, love, and understanding.
+    </p>
+
+    <!-- Romantic Button -->
+    <button class="forgive-btn" onclick="showMessage()">
+      💖 Please Forgive Me, Joseph 💖
+    </button>
+
+    <!-- Message After Click -->
+    <p id="message">
+      Thank you for reading this, Joseph. I truly hope we can smile again together 🌸
+    </p>
+
+    <p class="signature">
+      With all my sincere apologies,<br />
+      <i>[Your Name]</i>
+    </p>
+
   </div>
 
+  <!-- JavaScript for Button -->
   <script>
-    const message = document.getElementById("message");
-    const card = document.getElementById("card");
-    const sorryBtn = document.getElementById("sorryBtn");
-    const letGoBtn = document.getElementById("letGoBtn");
-
-    // When "I'm sorry" button is clicked
-    sorryBtn.addEventListener("click", () => {
-      message.style.opacity = 0;
-      setTimeout(() => {
-        message.textContent = "I take responsibility for my mistakes. This apology comes from reflection, not expectation.";
-        message.style.opacity = 1;
-        sorryBtn.disabled = true;
-        letGoBtn.disabled = true;
-      }, 500);
-    });
-
-    // When "Letting go" button is clicked
-    letGoBtn.addEventListener("click", () => {
-      card.style.opacity = 0;
-      setTimeout(() => {
-        card.innerHTML = '<div class="final-message">This is me choosing peace and releasing what was. I wish you happiness moving forward.</div>';
-        card.style.opacity = 1;
-      }, 500);
-    });
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+    }
   </script>
 
 </body>
-</html
+</html>
