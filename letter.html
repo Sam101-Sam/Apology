@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apology Letter to Joseph</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 25px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+
+    .letter-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 55px;
+      border-radius: 25px;
+      max-width: 750px;
+      width: 85%;
+      text-align: center;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: 65px;
+      color: #c2185b;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      background: #c2185b;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e91e63;
+      transform: scale(1.05);
+    }
+
+    #message {
+      display: none;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #c2185b;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .back {
+      margin-top: 25px;
+      display: block;
+      text-decoration: none;
+      color: #444;
+    }
+
+    .back:hover {
+      color: #c2185b;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Hearts -->
+  <div class="heart" style="left: 15%; animation-delay: 0s;">💖</div>
+  <div class="heart" style="left: 35%; animation-delay: 2s;">💕</div>
+  <div class="heart" style="left: 55%; animation-delay: 4s;">💗</div>
+  <div class="heart" style="left: 75%; animation-delay: 1s;">💞</div>
+  <div class="heart" style="left: 95%; animation-delay: 3s;">❤️</div>
+
+  <div class="letter-box">
+
+    <h1>Dear Joseph,</h1>
+
+    <p>
+      I want to speak from the deepest part of my heart and sincerely apologize
+      for everything that has happened. I know I may have hurt you, and I truly
+      regret causing you any pain or disappointment.
+    </p>
+
+    <p>
+      Joseph, you mean so much to me, and it hurts knowing that my actions or
+      words may have made you feel upset. Please understand it was never my
+      intention to lose the bond we share.
+    </p>
+
+    <p>
+      I am asking you with all honesty and humility to forgive me. I hope we can
+      heal from this moment and move forward with peace, love, and understanding.
+    </p>
+
+    <button class="btn" onclick="showMessage()">
+      💖 Please Forgive Me, Joseph 💖
+    </button>
+
+    <p id="message">
+      Thank you for reading this, Joseph. I truly hope we can smile again together 🌸
+    </p>
+
+    <p class="signature">
+      With all my sincere apologies,<br>
+      <i>[Marion]</i>
+    </p>
+
+    <a class="back" href="index.html">⬅ Back to First Page</a>
+
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
