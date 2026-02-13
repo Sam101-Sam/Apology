@@ -3,133 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apology Letter to Joseph</title>
+  <title>For Joseph</title>
 
-  <!-- Romantic Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: "Poppins", sans-serif;
-
-      /* Romantic Background */
-      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
       height: 100vh;
-
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      text-align: center;
     }
 
-    .letter-box {
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 25px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+
+    .box {
       background: rgba(255, 255, 255, 0.95);
-      width: 85%;
-      max-width: 700px;
-      padding: 55px;
+      padding: 60px;
       border-radius: 25px;
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-      text-align: center;
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+      max-width: 600px;
+      z-index: 2;
     }
 
     h1 {
       font-family: "Great Vibes", cursive;
-      font-size: 65px;
+      font-size: 70px;
       color: #c2185b;
-      margin-bottom: 20px;
     }
 
     p {
       font-size: 18px;
-      line-height: 1.9;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .signature {
-      margin-top: 30px;
-      font-size: 20px;
-      font-weight: bold;
       color: #444;
+      margin-top: 15px;
     }
 
-    /* Romantic Button */
-    .forgive-btn {
+    a {
+      display: inline-block;
       margin-top: 30px;
-      padding: 15px 35px;
-      font-size: 18px;
-      border: none;
-      border-radius: 30px;
+      padding: 15px 40px;
       background: #c2185b;
       color: white;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 18px;
       transition: 0.3s;
       box-shadow: 0px 5px 15px rgba(194, 24, 91, 0.4);
     }
 
-    .forgive-btn:hover {
+    a:hover {
       background: #e91e63;
       transform: scale(1.05);
-    }
-
-    /* Hidden message after click */
-    #message {
-      margin-top: 25px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #c2185b;
-      display: none;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="letter-box">
+  <!-- Floating Hearts -->
+  <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+  <div class="heart" style="left: 30%; animation-delay: 2s;">💕</div>
+  <div class="heart" style="left: 50%; animation-delay: 4s;">💗</div>
+  <div class="heart" style="left: 70%; animation-delay: 1s;">💞</div>
+  <div class="heart" style="left: 90%; animation-delay: 3s;">❤️</div>
 
-    <h1>Dear Joseph,</h1>
-
+  <div class="box">
+    <h1>Joseph 💖</h1>
     <p>
-      I want to speak from the deepest part of my heart and sincerely apologize
-      for everything that has happened. I know I may have hurt you, and I truly
-      regret causing you any pain or disappointment.
+      This is something from my heart…  
+      Please take a moment to read my message.
     </p>
 
-    <p>
-      Joseph, you mean so much to me, and it hurts knowing that my actions or
-      words may have made you feel upset. Please understand that it was never
-      my intention to lose the bond we share.
-    </p>
-
-    <p>
-      I am asking you with all honesty and humility to forgive me. I hope we can
-      heal from this moment, and move forward with peace, love, and understanding.
-    </p>
-
-    <!-- Romantic Button -->
-    <button class="forgive-btn" onclick="showMessage()">
-      💖 Please Forgive Me, Joseph 💖
-    </button>
-
-    <!-- Message After Click -->
-    <p id="message">
-      Thank you for reading this, Joseph. I truly hope we can smile again together 🌸
-    </p>
-
-    <p class="signature">
-      With all my sincere apologies,<br />
-      <i>[Your Name]</i>
-    </p>
-
+    <a href="letter.html">💌</a>
   </div>
-
-  <!-- JavaScript for Button -->
-  <script>
-    function showMessage() {
-      document.getElementById("message").style.display = "block";
-    }
-  </script>
 
 </body>
 </html>
