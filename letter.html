@@ -12,20 +12,19 @@
       margin: 0;
       font-family: "Poppins", sans-serif;
       background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      min-height: 100vh;
+      overflow-y: auto; /* Enables scrolling */
+      padding: 40px 0;
     }
 
     /* Floating Hearts */
     .heart {
-      position: absolute;
+      position: fixed;
       bottom: -20px;
       font-size: 25px;
       animation: floatUp 8s linear infinite;
       opacity: 0.7;
+      z-index: 1;
     }
 
     @keyframes floatUp {
@@ -34,38 +33,42 @@
         opacity: 0.8;
       }
       100% {
-        transform: translateY(-110vh);
+        transform: translateY(-120vh);
         opacity: 0;
       }
     }
 
     .letter-box {
       background: rgba(255, 255, 255, 0.95);
-      padding: 55px;
+      padding: 60px;
       border-radius: 25px;
       max-width: 750px;
       width: 85%;
+      margin: auto;
       text-align: center;
       box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+      position: relative;
       z-index: 2;
     }
 
     h1 {
       font-family: "Great Vibes", cursive;
-      font-size: 65px;
+      font-size: 70px;
       color: #c2185b;
+      margin-bottom: 30px;
     }
 
     p {
       font-size: 18px;
-      line-height: 1.9;
+      line-height: 2;
       color: #333;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
+    /* Romantic Button */
     .btn {
       margin-top: 25px;
-      padding: 15px 35px;
+      padding: 15px 40px;
       border: none;
       border-radius: 30px;
       font-size: 18px;
@@ -73,6 +76,7 @@
       color: white;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0px 5px 15px rgba(194, 24, 91, 0.4);
     }
 
     .btn:hover {
@@ -80,25 +84,19 @@
       transform: scale(1.05);
     }
 
-    #message {
-      display: none;
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #c2185b;
-    }
-
     .signature {
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 20px;
       font-weight: bold;
+      color: #444;
     }
 
     .back {
-      margin-top: 25px;
-      display: block;
+      margin-top: 30px;
+      display: inline-block;
       text-decoration: none;
       color: #444;
+      font-size: 16px;
     }
 
     .back:hover {
@@ -110,12 +108,13 @@
 <body>
 
   <!-- Floating Hearts -->
-  <div class="heart" style="left: 15%; animation-delay: 0s;">💖</div>
-  <div class="heart" style="left: 35%; animation-delay: 2s;">💕</div>
-  <div class="heart" style="left: 55%; animation-delay: 4s;">💗</div>
-  <div class="heart" style="left: 75%; animation-delay: 1s;">💞</div>
-  <div class="heart" style="left: 95%; animation-delay: 3s;">❤️</div>
+  <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+  <div class="heart" style="left: 30%; animation-delay: 2s;">💕</div>
+  <div class="heart" style="left: 50%; animation-delay: 4s;">💗</div>
+  <div class="heart" style="left: 70%; animation-delay: 1s;">💞</div>
+  <div class="heart" style="left: 90%; animation-delay: 3s;">❤️</div>
 
+  <!-- Letter Content -->
   <div class="letter-box">
 
     <h1>Dear Joseph,</h1>
@@ -137,28 +136,20 @@
       heal from this moment and move forward with peace, love, and understanding.
     </p>
 
-    <button class="btn" onclick="showMessage()">
+    <!-- Button -->
+    <button class="btn">
       💖 Please Forgive Me, Joseph 💖
     </button>
-
-    <p id="message">
-      Thank you for reading this, Joseph. I truly hope we can smile again together 🌸
-    </p>
 
     <p class="signature">
       With all my sincere apologies,<br>
       <i>[Marion]</i>
     </p>
 
+    <!-- Back Link -->
     <a class="back" href="index.html">⬅ Back to First Page</a>
 
   </div>
-
-  <script>
-    function showMessage() {
-      document.getElementById("message").style.display = "block";
-    }
-  </script>
 
 </body>
 </html>
