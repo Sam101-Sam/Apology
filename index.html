@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apology Page</title>
+  <style>
+    /* Body and background */
+    body {
+      background-color: #ffe6e6; /* soft pastel pink */
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* Floating hearts (subtle decorative effect) */
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #ffb3b3;
+      transform: rotate(45deg);
+      animation: float 6s infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #ffb3b3;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -7.5px; left: 0; }
+    .heart::after { left: 7.5px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0.7; }
+      50% { transform: translateY(-50px) rotate(45deg); opacity: 0.9; }
+      100% { transform: translateY(-100px) rotate(45deg); opacity: 0.7; }
+    }
+
+    /* Card styling */
+    .card {
+      background-color: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    /* Buttons */
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffb3b3;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff9999;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Fade animations */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; }
+    }
+
+    /* Final goodbye styling */
+    .final-message {
+      font-size: 18px;
+      padding: 20px;
+      color: #555;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @media (max-width: 500px) {
+      .card { padding: 20px; }
+      button { font-size: 14px; padding: 10px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="heart" style="left: 30%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
+  <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
+
+  <!-- Main card -->
+  <div class="card" id="card">
+    <h1>For You, Joseph</h1>
+    <p id="message">This is the initial apology text. I want to acknowledge my mistakes and express appreciation for the moments we shared.</p>
+    <div class="buttons">
+      <button id="sorryBtn">I’m sorry</button>
+      <button id="letGoBtn">Letting go</button>
+    </div>
+  </div>
+
+  <script>
+    const message = document.getElementById("message");
+    const card = document.getElementById("card");
+    const sorryBtn = document.getElementById("sorryBtn");
+    const letGoBtn = document.getElementById("letGoBtn");
+
+    // When "I'm sorry" button is clicked
+    sorryBtn.addEventListener("click", () => {
+      message.style.opacity = 0;
+      setTimeout(() => {
+        message.textContent = "I take responsibility for my mistakes. This apology comes from reflection, not expectation.";
+        message.style.opacity = 1;
+        sorryBtn.disabled = true;
+        letGoBtn.disabled = true;
+      }, 500);
+    });
+
+    // When "Letting go" button is clicked
+    letGoBtn.addEventListener("click", () => {
+      card.style.opacity = 0;
+      setTimeout(() => {
+        card.innerHTML = '<div class="final-message">This is me choosing peace and releasing what was. I wish you happiness moving forward.</div>';
+        card.style.opacity = 1;
+      }, 500);
+    });
+  </script>
+
+</body>
+</html
